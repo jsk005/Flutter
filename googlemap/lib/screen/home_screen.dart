@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           print(snapshot.connectionState);
           // 로딩상태
-          if (snapshot.connectionState == ConnectionState.waiting) {
+          if (!snapshot.hasData) {
             return Center(
               child: CircularProgressIndicator(),
             );
