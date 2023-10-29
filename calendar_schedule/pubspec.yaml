@@ -1,0 +1,49 @@
+name: calendar
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  table_calendar: ^3.0.9
+  intl: ^0.18.1
+  drift: ^2.13.0
+  sqlite3_flutter_libs: ^0.5.0
+  path_provider: ^2.0.0
+  path: ^1.8.3
+  get_it: ^7.6.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  drift_dev: ^2.13.0
+  build_runner: ^2.4.6
+
+
+flutter:
+
+  uses-material-design: true
+  fonts:
+    - family: NotoSans
+      fonts:
+        - asset: asset/font/NotoSansKR-Black.otf
+          weight: 900
+        - asset: asset/font/NotoSansKR-Bold.otf
+          weight: 700
+        - asset: asset/font/NotoSansKR-Medium.otf
+          weight: 500
+        - asset: asset/font/NotoSansKR-Regular.otf
+          weight: 400
+        - asset: asset/font/NotoSansKR-Light.otf
+          weight: 300
+        - asset: asset/font/NotoSansKR-Thin.otf
+          weight: 100
