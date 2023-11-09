@@ -1,28 +1,20 @@
-import 'package:finedust/const/colors.dart';
+import 'package:finedust/const/regions.dart';
 import 'package:flutter/material.dart';
 
-const regions = [
-  '서울',
-  '경기',
-  '부산',
-  '대구',
-  '대전',
-  '인천',
-  '광주',
-  '울산',
-  '세종',
-  '경남',
-  '경북',
-  '전남',
-  '전북',
-  '충남',
-  '충북',
-  '강원',
-  '제주'
-];
+typedef OnRegionTap = void Function(String region);
 
 class MainDrawer extends StatelessWidget {
-  const MainDrawer({Key? key}) : super(key: key);
+  final OnRegionTap onRegionTap;
+  final String selectedRegion;
+  final Color darkColor;
+  final Color lightColor;
+
+  const MainDrawer({
+    required this.onRegionTap,
+    required this.selectedRegion,
+    required this.darkColor,
+    required this.lightColor,
+    Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +37,10 @@ class MainDrawer extends StatelessWidget {
                   tileColor: Colors.white,
                   selectedTileColor: lightColor,
                   selectedColor: Colors.black,
-                  selected: e == '서울',
-                  onTap: () {},
+                  selected: e == selectedRegion,
+                  onTap: () {
+                    onRegionTap(e);
+                  },
                   title: Text(e),
                 ),
               )

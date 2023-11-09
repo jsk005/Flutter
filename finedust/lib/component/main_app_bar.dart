@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
 
-import '../const/colors.dart';
+import '../model/stat_model.dart';
+import '../model/status_model.dart';
+import '../utils/data_utils.dart';
 
 class MainAppBar extends StatelessWidget {
-  const MainAppBar({Key? key}) : super(key: key);
+  final String region;
+  final StatusModel status;
+  final StatModel stat;
+  final DateTime dateTime;
+  final bool isExpanded;
+
+  const MainAppBar({
+    required this.region,
+    required this.status,
+    required this.stat,
+    required this.dateTime,
+    required this.isExpanded,
+    Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +27,13 @@ class MainAppBar extends StatelessWidget {
     );
 
     return SliverAppBar(
-      backgroundColor: primaryColor,
+      backgroundColor: status.primaryColor,
+      pinned: true,
+      title: isExpanded
+          ? null
+          : Text(
+          '$region ${DataUtils.getTimeFromDateTime(dateTime: dateTime)}'),
+      centerTitle: true,
       expandedHeight: 500,
       flexibleSpace: FlexibleSpaceBar(
         background: SafeArea(
@@ -21,28 +41,28 @@ class MainAppBar extends StatelessWidget {
             margin: EdgeInsets.only(top: kToolbarHeight),
             child: Column(
               children: [
-                Text('서울',
+                Text(region,
                   style: ts.copyWith(
                     fontSize: 30.0,
                     fontWeight: FontWeight.w700,
                   ),),
                 Text(
-                  DateTime.now().toString(),
+                  DataUtils.getTimeFromDateTime(dateTime: stat.dataTime),
                   style: ts.copyWith(
                     fontSize: 20.0,
                   ),
                 ),
                 SizedBox(height: 20.0,),
-                Image.asset('asset/img/mediocre.png',
+                Image.asset(status.imagePath,
                   width: MediaQuery.of(context).size.width / 2,),
                 SizedBox(height: 20.0,),
-                Text('보통',
+                Text(status.label,
                   style: ts.copyWith(
                     fontSize: 40.0,
                     fontWeight: FontWeight.w700,
                   ),),
                 SizedBox(height: 20.0,),
-                Text('나쁘지 않네요',
+                Text(status.comment,
                   style: ts.copyWith(
                     fontSize: 20.0,
                     fontWeight: FontWeight.w700,
