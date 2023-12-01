@@ -1,18 +1,19 @@
 import 'package:dio/dio.dart' hide Headers;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rest/common/const/data.dart';
 import 'package:rest/common/dio/dio.dart';
 import 'package:rest/common/model/cursor_pagination_model.dart';
-import 'package:rest/common/model/pagenation_params.dart';
+import 'package:rest/common/model/pagination_params.dart';
+import 'package:rest/common/repository/base_pagination_repository.dart';
 import 'package:rest/restaurant/model/restaurant_detail_model.dart';
+import 'package:rest/restaurant/model/restaurant_model.dart';
 import 'package:retrofit/retrofit.dart';
-
-import '../../common/const/data.dart';
-import '../model/restaurant_model.dart';
 
 part 'restaurant_repository.g.dart';
 
 final restaurantRepositoryProvider = Provider<RestaurantRepository>((ref) {
   final dio = ref.watch(dioProvider);
+
   final repository = RestaurantRepository(
       dio, baseUrl: 'http://$realIp/restaurant');
   return repository;
@@ -20,7 +21,7 @@ final restaurantRepositoryProvider = Provider<RestaurantRepository>((ref) {
 
 
 @RestApi()
-abstract class RestaurantRepository {
+abstract class RestaurantRepository implements IBasePaginationRepository<RestaurantModel> {
   factory RestaurantRepository(Dio dio, {String baseUrl}) =
   _RestaurantRepository;
 
@@ -31,6 +32,7 @@ abstract class RestaurantRepository {
   Future<CursorPagination<RestaurantModel>> paginate({
     @Queries() PaginationParams? paginationParams = const PaginationParams(),
   });
+
 
   @GET('/{id}')
   @Headers({
