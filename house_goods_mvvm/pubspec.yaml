@@ -1,0 +1,67 @@
+name: house_mvvm
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations: # Add this line
+    sdk: flutter         # Add this line
+
+
+  cupertino_icons: ^1.0.2
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.8.1
+  provider: ^6.1.1
+  flutter_riverpod: ^2.4.9
+  #  flutter_localization: ^0.1.14
+  intl: ^0.18.1
+  flutter_svg: ^2.0.9
+  dio: ^5.4.0
+  flutter_staggered_grid_view: ^0.7.0
+  cached_network_image: ^3.3.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  freezed: ^2.4.5
+  build_runner: ^2.4.7
+  json_serializable: ^6.7.1
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+
+  fonts:
+    - family: noto_sans
+      fonts:
+        - asset: assets/fonts/NotoSans-Light.ttf
+          weight: 300
+        - asset: assets/fonts/NotoSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/NotoSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/NotoSansKR-Black.otf
+          weight: 900
+        - asset: assets/fonts/NotoSansKR-Bold.otf
+          weight: 700
+        - asset: assets/fonts/NotoSansKR-Medium.otf
+          weight: 500
+        - asset: assets/fonts/NotoSansKR-Thin.otf
+          weight: 100
+flutter_intl:
+  enabled: true
+  arb_dir: lib/util/lang/l10n
+  output_dir: lib/util/lang/generated
