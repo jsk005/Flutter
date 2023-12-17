@@ -50,7 +50,7 @@ class CartView extends StatelessWidget {
         ],
       ),
       body: CartLayout(
-        cartItemList: cartService.selectedCartItemList.isEmpty
+        cartItemList: cartService.cartItemList.isEmpty
             ? const CartEmpty()
             : ListView.builder(
                 itemCount: cartService.cartItemList.length,
