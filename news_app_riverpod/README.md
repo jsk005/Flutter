@@ -8,43 +8,5 @@ NewsDataResult.fromJson 부분 구현이 핵심사항이다. 이 부분을 잘�
 서버 데이터 구조가 Null 을 허용하는 변수인지 아닌지 여부 파악이 쉽지 않다.<br/>
 compile 할 때 에러가 발생하면 Retrofit 라이브러리가 제대로 동작되지 않는다. Model Class 정의한 변수를 하나씩 nullable로 변경하면서 테스트해야 한다.<br/>
 
-```
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:news_app_riverpod/domain/model/news_data.dart';
-
-sealed class NewsDataResultBase {}
-
-class NewsDataResultLoading extends NewsDataResultBase {}
-
-class NewsDataResultError extends NewsDataResultBase {
-  final String errMsg;
-
-  NewsDataResultError({
-    required this.errMsg,
-  });
-}
-
-class NewsDataResult extends NewsDataResultBase {
-  String? status;
-  int? totalResults;
-  List<NewsData>? articles;
-
-  NewsDataResult({
-    this.status,
-    this.totalResults,
-    this.articles,
-  });
-
-  NewsDataResult.fromJson(Map < String, dynamic > json) {
-    status = json['status'];
-    totalResults = json['totalResults'];
-    if (json['articles'] != null) {
-      articles = <NewsData> [];
-      json['articles'].forEach((v) {
-        articles!.add(NewsData.fromJson(v));
-      });
-    }
-  }
-}
-```
-
+### 세부 내용
+세부 설명은 하위 폴더에 있는 Readme 를 읽어보면 된다.
