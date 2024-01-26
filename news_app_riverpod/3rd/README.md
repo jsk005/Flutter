@@ -1,7 +1,7 @@
 ### 개요
 Retrofit 라이브러리 활용 및 Riverpod 상태관리 활용하면 코드를 심플하게 구현할 수 있다.<br/>
 Clean Architecture 필요성 여부는 실력부족으로 아직은 잘 모르겠다.<br/>
-그리고 Model Class 명은 NewsDataResult 에서 NewsModel 로 변경했다.<br/>
+Model Class 명은 NewsDataResult 에서 NewsModel 로 변경했다.<br/>
 원 소스코드를 설명하는 동영상은 https://www.youtube.com/watch?v=HgvKWMrbBe4 를 참조하면 된다.<br/>
 
 
