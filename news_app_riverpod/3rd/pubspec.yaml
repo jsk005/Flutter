@@ -1,0 +1,58 @@
+name: news_app_riverpod
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  dio: ^5.4.0
+  retrofit: ^4.0.3
+  flutter_riverpod: ^2.4.9
+  json_annotation: ^4.8.1
+  freezed_annotation: ^2.4.1
+  riverpod_annotation: ^2.3.3
+  flutter_secure_storage: ^9.0.0
+  logger: ^2.0.2+1
+  intl: ^0.19.0
+  cached_network_image: ^3.3.1
+  webview_flutter: ^4.4.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  json_serializable: ^6.7.1
+  build_runner: ^2.4.8
+  freezed: ^2.4.6
+  retrofit_generator: ^8.0.6
+  riverpod_generator: ^2.3.9
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/img/logo/
+    - assets/icons/
+  fonts:
+    - family: noto_sans
+      fonts:
+        - asset: assets/fonts/NotoSans-Light.ttf
+          weight: 300
+        - asset: assets/fonts/NotoSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/NotoSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/NotoSansKR-Black.otf
+          weight: 900
+        - asset: assets/fonts/NotoSansKR-Bold.otf
+          weight: 700
+        - asset: assets/fonts/NotoSansKR-Medium.otf
+          weight: 500
+        - asset: assets/fonts/NotoSansKR-Thin.otf
+          weight: 100
