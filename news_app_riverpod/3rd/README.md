@@ -1,6 +1,7 @@
 ### 개요
-Clean Architecture 구조로 구현하는 것을 시도했으나 아직은 실력 부족으로 디렉토리 구조만 준용하여 구현했다.<br/>
-Retrofit 라이브러리를 활용하면 코드를 심플하게 구현할 수 있어서 이를 활용했고 Model Class 명은 NewsModel 로 변경했다.<br/>
+Clean Architecture 구조로 구현하는 것을 시도했으나 실력 부족으로 디렉토리 구조만 준용하여 구현했다.<br/>
+Retrofit 라이브러리를 활용하면 코드를 심플하게 구현할 수 있어서 이를 활용했는데, Clean Architecture 까지 할 필요가 없는 것인지 여부까지는 모르겠다.<br/>
+그리고 Model Class 명은 NewsDataResult 에서 NewsModel 로 변경했다.<br/>
 원 소스코드를 설명하는 동영상은 https://www.youtube.com/watch?v=HgvKWMrbBe4 를 참조하면 된다.<br/>
 
 
