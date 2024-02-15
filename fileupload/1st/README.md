@@ -15,5 +15,11 @@ Android app 폴더의 build.gradle 수정사항은 컴파일 하면 image_picker
 compileSdkVersion 34<br/>
 minSdkVersion 23<br/>
 
+#### Retrofit 라이브러리 활용
+riverpod 상태관리를 사용하지 않을 경우에는 <br/>
+final response = await ref.read(restClientProvider).uploadFile 코드를 <br/>
+final response = await _apiService!.uploadFile 로 변경해서 사용하면 된다. <br/>
+
+
 #### PHP 샘플코드
 SQL 테이블 구조와 PHP 샘플코드는 PHP 폴더에 포함되어 있으니 참고하면 도움될 것이다.
