@@ -11,7 +11,9 @@ ios 폴더의 Info.plist 를 참조하여 추가한다.<br/>
 <key>NSMicrophoneUsageDescription</key>
 <string>This app does not require access to the microphone.</string>
 ```
-Android app 폴더의 build.gradle 수정사항
+Android app 폴더의 build.gradle 수정사항은 컴파일 하면 image_picker 버전에 따라 요구버전이 다를 것이다.<br/>
+compileSdkVersion 34<br/>
+minSdkVersion 23<br/>
 ```
 plugins {
     id "com.android.application"
